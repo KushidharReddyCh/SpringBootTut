@@ -1,6 +1,7 @@
 package com.kushidhar.Sprintboot.tutorial.controller;
 
 import com.kushidhar.Sprintboot.tutorial.entity.Department;
+import com.kushidhar.Sprintboot.tutorial.error.DepartmentNotFoundException;
 import com.kushidhar.Sprintboot.tutorial.service.DepartmentService;
 import com.kushidhar.Sprintboot.tutorial.service.DepartmentServiceImpl;
 import jakarta.validation.Valid;
@@ -32,7 +33,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/departments/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) {
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         LOGGER.info("Inside Saving department of fetchDepartmentById");
         return departmentService.fetchDepartmentById(departmentId);
     }
