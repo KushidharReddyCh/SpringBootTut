@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: Sprint-boot-tutorial
+  datasource:
+    url: jdbc:mysql://localhost:3306/dcbapp
+    username: root
+    password: password
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 8082
+welcome:
+  message: Welcome to Daily Code Buffer!!
+
+# Uncomment the following for H2 Database configuration
+# spring:
+#   h2:
+#     console:
+#       enabled: true
+#   datasource:
+#     url: jdbc:h2:mem:dcbapp
+#     driver-class-name: org.h2.Driver
+#     username: sa
+#     password: password
+#   jpa:
+#     database-platform: org.hibernate.dialect.H2Dialect
